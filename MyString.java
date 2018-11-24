@@ -3,7 +3,7 @@ public class MyString implements CharSequence {
 
   //constructor takes CharSequence and puts it in a char array
   public MyString(CharSequence s) {
-    char[] data = new char[s.length()];
+    data = new char[s.length()];
     for (int i = 0; i < data.length; i++) {
       data[i] = s.charAt(i);
     }
@@ -11,6 +11,7 @@ public class MyString implements CharSequence {
 
   //
   public char charAt(int index) {
+    //if index isnt valid throw an exception
     if (index >= data.length) {
       throw new IndexOutOfBoundsException();
     }
@@ -45,13 +46,13 @@ public class MyString implements CharSequence {
     MyString z = new MyString("abc");
     MyString y = new MyString("hllelo");
     MyString x = new MyString("yaayeet");
-    System.out.print(x);
-    System.out.println(z.length());
-    System.out.println(x.length());
-    System.out.println(y.length());
-    System.out.print(z.charAt(0));
-    System.out.print(y.charAt(4));
-    System.out.print(x.charAt(3));
-    System.out.print(x.subSequence(0,4));
+    System.out.println(z.length() +  " length ");
+    System.out.println(x.length() + " length ");
+    System.out.println(y.length() + " length");
+    System.out.println(x);
+    System.out.println(z.charAt(0));
+    System.out.println(y.charAt(4));
+    System.out.println(x.charAt(3));
+    System.out.println(x.subSequence(0,4));
     }
 }
