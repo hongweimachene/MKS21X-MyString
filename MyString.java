@@ -46,12 +46,7 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
     if (o == null) {
       throw new NullPointerException();
     }
-    if (length() < o.length()) {
-      return -1;
-    }
-    if (length() > o.length()) {
-      return 1;
-    }
+    //check if there is a difference between each character in the sequence
     for (int i = 0; i < length(); i++) {
       if (charAt(i) < o.charAt(i)) {
         return -1;
@@ -60,6 +55,14 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
         return 1;
       }
     }
+    //if no difference, return 1 or -1 based on which sequence is longer
+    if (length() < o.length()) {
+      return -1;
+    }
+    if (length() > o.length()) {
+      return 1;
+    }
+    //otherwise they are the same sequence 
     return 0;
   }
 
